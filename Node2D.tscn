@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Node2D.gd" type="Script" id=1]
+[ext_resource path="res://Neural Network/Visualization/Visualization.tscn" type="PackedScene" id=2]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="TouchScreenButton" type="Button" parent="."]
+margin_left = 375.0
+margin_top = 306.0
+margin_right = 525.0
+margin_bottom = 385.0
+
+[node name="Label" type="Label" parent="."]
+margin_left = 345.0
+margin_top = 200.0
+margin_right = 385.0
+margin_bottom = 214.0
+rect_scale = Vector2( 5, 5 )
+
+[node name="Visualization" parent="." instance=ExtResource( 2 )]
+
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_TouchScreenButton_pressed"]
